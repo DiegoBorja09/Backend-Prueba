@@ -1,13 +1,19 @@
-#Prueba Tecnica Backend
-##instalacion
-Luego de clonar el repositorio ejecuta el comando 
+# Prueba Tecnica Backend
+## instalacion
+Luego de clonar el repositorio ejecuta el comando ;
 *npm install*
 para instalar las dependencias del proyecto, en el archivo .env debes escribir las variables que el programa va a utilizar que son:
+        
 *DB_HOST* : host donde se escuentra la base de datos
+
 *DB_PORT* : Puerto donde se escuentra la base de datos
+
 *DB_USERNAME* : el usuario con acceso a la base de datos que utilice
+
 *DB_PASSWORD* : la contraseña para acceder a las bases de datos
+
 *DB_NAME* : el nombre de la base de datos que vamos a utilizar
+
 *PORT* : el puerto ya estara por defecto pero lo puedes cambiar por el que desea recuerda que el puerto es donde va a correr nuestro backend
 
 para correr el proyecto en produccion debes ejecutar el comando
@@ -20,7 +26,7 @@ si no tenemos ningun error por consola debe mostrar estos mensajes
 *Listening: http://localhost:4000*
 *conexion exitosa*
 
-###Descripcion del codigo
+### Descripcion del codigo
 
 en esta seccion vamos a mostar como esta constituido nuestro proyecto con sus diferentes carpetas y explicamos como funciona nuestro codigo
 
