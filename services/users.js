@@ -3,8 +3,8 @@ const {query} =require("../config/database")
 
 class User{
    
-
-
+    
+//metodo para obtener todos los usuarios la informacion de los usuarios con sus telefonos y emails
     async getAll(){
         const getallsql="SELECT e.id,e.nombre,e.apellidos,e.tipoIdentificacion,e.identificacion,e.fechaingreso,t.numero,em.emails "+
         "FROM empleados e INNER JOIN telefonos t ON (e.id = t.Empleados_id)INNER JOIN emails em on (e.id=em.Empleados_id)"
@@ -19,6 +19,7 @@ class User{
 
     }
 
+    //metodo para obtener un usuario por su id con todos los datos tambien los telefonos registrados y emails
     async getAllid(id){
         const getallsql="SELECT e.id,e.nombre,e.apellidos,e.tipoIdentificacion,e.identificacion,e.fechaingreso,t.numero,em.emails "+
         "FROM empleados e INNER JOIN telefonos t ON (e.id = t.Empleados_id)INNER JOIN emails em on (e.id=em.Empleados_id) where e.id=?"
@@ -33,6 +34,7 @@ class User{
 
     }
 
+//metodo para obtener la fecha y hora actual y imprime con formato YYYY-MM-DD 00:00:00
     obtenerfecha() {
         let date = new Date()
 
@@ -51,6 +53,7 @@ class User{
     }
     }
 
+    //metodo para obtener todos los usuarios sin el telefono y emails
     async getUser(){
         const getallall="select *from empleados"
 
@@ -63,6 +66,8 @@ class User{
 
     }
 
+    //metodo para obtener los datos de el usuario por su id
+
     async getByid(id){
         try {
 
@@ -73,6 +78,8 @@ class User{
             return error.message
         }
     }
+
+    //metodo para obtener los datos de el usuario por su nombre
     async getByname(nombre){
         try {
 
@@ -83,6 +90,8 @@ class User{
             return error.message
         }
     }
+
+    //metodo para actualizar o modificar los datos de los usuarios
     async updateuser(id,data){
 
         
@@ -104,6 +113,8 @@ class User{
         }
     }
 
+
+//metodo para crear un telefono a el usuario
 async createtlefono(id,data){
     try {
 
@@ -120,6 +131,8 @@ async createtlefono(id,data){
         
     }
 }
+
+//metodo para crear un email a el usuario
     async createemails(id,data){
         try {
     
@@ -137,6 +150,8 @@ async createtlefono(id,data){
    
 
 }
+
+//metodo para crear un usuario
     async create(data){
 
         try {
@@ -161,7 +176,7 @@ async createtlefono(id,data){
     }
 
    
-
+//metodo para eliminar un usuario
     async delete(id){
         try {
             await query("delete from emails where Empleados_id=?",[id]) 
@@ -174,6 +189,8 @@ async createtlefono(id,data){
             return error.message
         }
     }
+
+    //metodo para eliminar el celular de un usuario
     async deletetel(id){
         try {
             await query("delete from emails where Empleados_id=?",[id]) 

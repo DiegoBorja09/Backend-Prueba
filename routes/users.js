@@ -9,31 +9,31 @@ function users(app) {
     app.use("/api/users",router)
 
     router.get("/all", async (req,res)=>{
-        const users = await userServ.getAll() // Array de usuarios
+        const users = await userServ.getAll() 
         console.log("usandogetall")
         console.log(users)
         return res.json(users)
     })
     router.get("/", async (req,res)=>{
-        const users = await userServ.getUser() // Array de usuarios
+        const users = await userServ.getUser() 
         console.log("usandogetuser")
         console.log(users)
         return res.json(users)
     })
     router.get("/:id", async (req,res)=>{
-        const users = await userServ.getAllid(req.params.id) // Array de usuarios
+        const users = await userServ.getAllid(req.params.id) 
         console.log("usandogetallid")
         console.log(users)
         return res.json(users)
     })
     router.get("/actualizar/:id", async (req,res)=>{
-        const users = await userServ.getByid(req.params.id) // Array de usuarios
+        const users = await userServ.getByid(req.params.id) 
         console.log("usandogetbyid")
         console.log(users)
         return res.json(users)
     })
     router.get("/nombre/:nombre", async (req,res)=>{
-        const users = await userServ.getByname(req.params.nombre) // Array de usuarios
+        const users = await userServ.getByname(req.params.nombre) 
         console.log(req.params.nombre)
         console.log(users)
         return res.json(users)
