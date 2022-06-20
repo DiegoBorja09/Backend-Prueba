@@ -83,7 +83,7 @@ class User{
     async getByname(nombre){
         try {
 
-            const user = await query(`SELECT id,nombre,apellidos,tipoIdentificacion,identificacion FROM empleados WHERE nombre="${nombre}"`)
+            const user = await query(`SELECT id,nombre,apellidos,tipoIdentificacion,identificacion,fechaingreso FROM empleados WHERE nombre="${nombre}"`)
 
             return user
         } catch (error) {
